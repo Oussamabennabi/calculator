@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Poppins:wght@500;700&display=swap');
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* DEFAULT TO THEME 1 */
+
+// THEME 1
+/* BACKGROUNDS */
+$mainbackground: hsl(222, 26%, 31%);
+$toggle-key-background: hsl(223, 31%, 20%);
+$outputbackground: hsl(224, 36%, 15%);
+
+/* KEYs */
+$DEL-RESET-keybackground: hsl(225, 21%, 49%);
+$DEL-RESET-keyshadow: hsl(224, 28%, 35%);
+
+$EQUAL-keybackground: hsl(6, 63%, 50%);
+$EQUAL-keyshadow: hsl(6, 70%, 34%);
+
+$NUMBERS-keybackground: hsl(30, 25%, 89%);
+$NUMBERS-keyshadow: hsl(28, 16%, 65%);
+
+$TEXT-DARK: hsl(221, 14%, 31%);
+$TEXT-WHITE: hsl(0, 0, 100%);
+// TOGGLE CIRCLE :
+$TOGGLE-CIRCLE: $EQUAL-keybackground;
+
+body {
+	font-family: 'Be Vietnam Pro', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $mainbackground;
+	min-height: 100vh;
+	transition: all 0.15s ease-in-out;
+}
+
+button {
+	outline: none;
+	cursor: pointer;
+	border: none;
+}
+
+// /* CALCULATOR */
+
+.calculator {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	min-height: 714px;
+	width: 540px;
+	.calculator-header {
+		h2 {
+			font-size: 29px;
+			color: $TEXT-WHITE;
+		}
+		.toggletheme-container {
+			width: 145px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			span small {
+				color: $TEXT-WHITE;
+				font-weight: bold;
+				font-size: 10px;
+				letter-spacing: 2px;
+			}
+			.toggle-theme {
+				position: relative;
+				width: 71px;
+				display: flex;
+				justify-content: space-between;
+				padding: 5px;
+				border-radius: 20px;
+				background-color: $toggle-key-background;
+				.theme-numbers {
+					position: absolute;
+					display: flex;
+					left: 0;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 9px;
+					font-weight: bold;
+					width: 100%;
+					pointer-events: none;
+					color: $TEXT-WHITE;
+					top: -60%;
+				}
+				.circle {
+					width: 17px;
+					display: block;
+					border-radius: 50%;
+					margin-right: auto;
+					height: 17px;
+					background-color: $TOGGLE-CIRCLE;
+					transition: all 0.14s ease-in-out;
+				}
+				.circle.hidden {
+					opacity: 0;
+				}
+			}
+		}
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 29px;
+		padding-top: 9px;
+		width: 100%;
+	}
+	.calculator-output {
+		min-height: 128px;
+		background-color: $outputbackground;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding-right: 36px;
+		font-size: 41px;
+		color: $TEXT-WHITE;
+		word-wrap: break-word;
+		word-break: break-all;
+		font-weight: bold;
+		border-radius: 11px;
+		text-align: right;
+		margin-bottom: 25px;
+	}
+	.calculator-keypads {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(4, 101px);
+		justify-content: space-between;
+		grid-template-rows: repeat(5, 1fr);
+		gap: 12px;
+		row-gap: 24px;
+		padding: 31px;
+		border-radius: 11px;
+		background-color: $toggle-key-background;
+		button {
+			font-weight: bolder;
+			border-radius: 11px;
+			height: 60px;
+			text-align: center;
+		}
+		button.NUMBER {
+			font-size: 32px;
+			border-bottom: 4px solid $NUMBERS-keyshadow;
+			background-color: $NUMBERS-keybackground;
+			width: 101px;
+		}
+		button.DEL {
+			width: 101px;
+		}
+		button.EQUAL {
+			font-size: 28px;
+			border-bottom: 4px solid $EQUAL-keyshadow;
+			background-color: $EQUAL-keybackground;
+			color: $TEXT-WHITE;
+		}
+		button.DEL,
+		button.RESET {
+			font-size: 20px;
+			color: $TEXT-WHITE;
+			background-color: $DEL-RESET-keybackground;
+			border-bottom: 4px solid $DEL-RESET-keyshadow;
+		}
+		button.span-2 {
+			grid-column: span 2;
+		}
+		button:active {
+			border-bottom: 0px;
+		}
+	}
+}
+
+.calculator.WHITE-THEME {
+	/* BACKGROUNDS */
+	$mainbackground: hsl(0, 0%, 90%);
+	$toggle-key-background: hsl(0, 5%, 81%);
+	$outputbackground: hsl(0, 0%, 93%);
+
+	/* KEYs */
+	$DEL-RESET-keybackground: hsl(185, 42%, 37%);
+	$DEL-RESET-keyshadow: hsl(185, 58%, 25%);
+
+	$EQUAL-keybackground: hsl(25, 98%, 40%);
+	$EQUAL-keyshadow: hsl(25, 99%, 27%);
+
+	$NUMBERS-keybackground: hsl(45, 7%, 89%);
+	$NUMBERS-keyshadow: hsl(35, 11%, 61%);
+
+	$TEXT-DARK: hsl(60, 10%, 19%);
+	$TEXT-WHITE: hsl(0, 0, 100%);
+	// TOGGLE CIRCLE :
+	$TOGGLE-CIRCLE: $EQUAL-keybackground;
+
+	.calculator-header {
+		h2 {
+			color: $TEXT-DARK;
+		}
+		.toggletheme-container {
+			span small {
+				color: $TEXT-DARK;
+			}
+			.toggle-theme {
+				background-color: $toggle-key-background;
+				.theme-numbers {
+					color: $TEXT-DARK;
+				}
+				.circle {
+					background-color: $TOGGLE-CIRCLE;
+				}
+			}
+		}
+	}
+	.calculator-output {
+		background-color: $outputbackground;
+		color: $TEXT-DARK;
+	}
+	.calculator-keypads {
+		background-color: $toggle-key-background;
+		button.NUMBER {
+			border-bottom: 4px solid $NUMBERS-keyshadow;
+			background-color: $NUMBERS-keybackground;
+		}
+		button.DEL {
+		}
+		button.EQUAL {
+			border-bottom: 4px solid $EQUAL-keyshadow;
+			background-color: $EQUAL-keybackground;
+			color: $TEXT-WHITE;
+		}
+		button.DEL,
+		button.RESET {
+			color: $TEXT-WHITE;
+			background-color: $DEL-RESET-keybackground;
+			border-bottom: 4px solid $DEL-RESET-keyshadow;
+		}
+		button.span-2 {
+			grid-column: span 2;
+		}
+		button:active {
+			border-bottom: 0px;
+		}
+	}
+}
+
+.calculator.DARK-PURPLE-THEME {
+	/* BACKGROUNDS */
+	$mainbackground: hsl(268, 75%, 9%);
+	$toggle-key-background: hsl(268, 71%, 12%);
+	$outputbackground: hsl(268, 71%, 12%);
+
+	/* KEYs */
+	$DEL-RESET-keybackground: hsl(281, 89%, 26%);
+	$DEL-RESET-keyshadow: hsl(285, 91%, 52%);
+
+	$EQUAL-keybackground: hsl(176, 100%, 44%);
+	$EQUAL-keyshadow: hsl(177, 92%, 70%);
+
+	$NUMBERS-keybackground: hsl(268, 47%, 21%);
+	$NUMBERS-keyshadow: hsl(290, 70%, 36%);
+
+	$TEXT-DARK: hsl(52, 100%, 62%);
+	$TEXT-WHITE: hsl(0, 0, 100%);
+	// TOGGLE CIRCLE :
+	$TOGGLE-CIRCLE: $EQUAL-keybackground;
+
+	.calculator-header {
+		h2 {
+			color: $TEXT-DARK;
+		}
+		.toggletheme-container {
+			span small {
+				color: $TEXT-DARK;
+			}
+			.toggle-theme {
+				background-color: $toggle-key-background;
+				.theme-numbers {
+					color: $TEXT-DARK;
+				}
+				.circle {
+					background-color: $TOGGLE-CIRCLE;
+				}
+			}
+		}
+	}
+	.calculator-output {
+		background-color: $outputbackground;
+		color: $TEXT-DARK;
+	}
+	.calculator-keypads {
+		background-color: $toggle-key-background;
+		button.NUMBER {
+			color: $TEXT-DARK;
+			border-bottom: 4px solid $NUMBERS-keyshadow;
+			background-color: $NUMBERS-keybackground;
+		}
+		button.EQUAL {
+			border-bottom: 4px solid $EQUAL-keyshadow;
+			background-color: $EQUAL-keybackground;
+			color: black;
+		}
+		button.DEL,
+		button.RESET {
+			color: $TEXT-WHITE;
+			background-color: $DEL-RESET-keybackground;
+			border-bottom: 4px solid $DEL-RESET-keyshadow;
+		}
+		button:active {
+			border-bottom: 0px;
+		}
+	}
+}
+// RESPONSIVNESS
+@media screen and (max-width: 565px) {
+	.calculator {
+		min-height: 714px;
+		width: 327px;
+		.calculator-output {
+			min-height: 88px;
+			padding-right: 26px;
+			max-height: 180px;
+			font-size: 41px;
+		}
+		.calculator-keypads {
+			display: grid;
+			width: 100%;
+			grid-template-columns: repeat(4, 60px);
+			padding: 24px;
+			button {
+				height: 64px;
+			}
+			button.NUMBER {
+				font-size: 28px;
+				width: 60px;
+			}
+			button.DEL {
+				width: 60px;
+			}
+		}
+	}
+}
