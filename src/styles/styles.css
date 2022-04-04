@@ -32,6 +32,10 @@ button {
   outline: none;
   cursor: pointer;
   border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .calculator {
@@ -74,6 +78,10 @@ button {
 
 .calculator .calculator-header .toggletheme-container {
   width: 145px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
